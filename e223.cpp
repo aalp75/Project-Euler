@@ -146,7 +146,6 @@ void solve() {
 }
 
 int main() {
-    debug("hey");
     LIM = 200;
     precompute_prime_divisors();
     solve();
