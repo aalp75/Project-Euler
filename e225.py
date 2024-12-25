@@ -2,14 +2,14 @@ import time
 
 # using the fact the number of possible value is finite and pigeon hole principle
 # all Tribonacci sequences modulo mod are periodic (same argument as Pisano period)
-# with a period less than mod ^ 3, in fact is way less
+# with a period less than mod ^ 3, in fact it's way less
 def check_divisibility(mod):
     T1 = 1
     T2 = 1
     T3 = 1
     seq = [T1, T2, T3]
     mem = set((T1, T2, T3))
-    is_div = False
+    is_divisible = False
     while True:
         TN = (T1 + T2 + T3) % mod
         seq.append(TN)
@@ -18,10 +18,10 @@ def check_divisibility(mod):
         T3 = TN
         if TN == 0:
             is_div = True
-        if (T1, T2, T3) in mem:
-            return is_div
+        if (T1, is_divisible, T3) in mem:
+            return is_divisible
         mem.add((T1, T2, T3))
-    return is_div
+    return is_divisible
 
 def main():
     start = time.time()
