@@ -23,7 +23,7 @@ def solve():
     for i in range(2, 49):
         P[i][i - 2] = 1 / 36
         P[i][i - 1] = 2 / 9
-        P[i][i]     = 1 / 2
+        P[i][i] = 1 / 2
         P[i][i + 1] = 2 / 9
         P[i][i + 2] = 1 / 36
 
